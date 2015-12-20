@@ -1,6 +1,7 @@
 <?php
 
-class PageListingWidget extends Widget {
+class PageListingWidget extends Widget
+{
 
     private static $db       = array(
     );
@@ -24,7 +25,8 @@ class PageListingWidget extends Widget {
      */
     private static $description = "Widget which displays a list of pages under a selected page.";
 
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
 
         $fields->addFieldToTab("Root.Main", new TextField('WidgetLabel', 'Widget Label'), "Enabled");
@@ -50,8 +52,8 @@ class PageListingWidget extends Widget {
         return $fields;
     }
 
-    public function Title() {
+    public function Title()
+    {
         return $this->WidgetLabel;
     }
-
 }

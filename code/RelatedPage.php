@@ -5,7 +5,8 @@
  * @property PageListingWidget $PageListingWidget
  * @property Page $Page
  */
-class RelatedPage extends DataObject {
+class RelatedPage extends DataObject
+{
 
     private static $db      = array(
         'ShowChildren' => 'Boolean'
@@ -15,7 +16,8 @@ class RelatedPage extends DataObject {
         'Page'              => 'Page'
     );
 
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
         $fields->removeByName('PageListingWidgetID');
         $fields->addFieldToTab('Root.Main', new TreeDropdownField("PageID", "Related page", "SiteTree"));
@@ -24,5 +26,4 @@ class RelatedPage extends DataObject {
         $fields->addFieldToTab('Root.Main', $showChildrenField);
         return $fields;
     }
-
 }
